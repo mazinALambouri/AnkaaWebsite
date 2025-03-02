@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html data-rounded="3xlarge" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Ankaa Space & Technology</title>
+    <meta
+      name="description"
+      content="Ankaa Space & Technology: Pioneering new frontiers in exploration and innovation."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+    />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="img/ANKAA.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="img/ankaa-logo.svg" as="image">
+    
+    <!-- Meta tags for social sharing -->
+    <meta property="og:title" content="Ankaa Space & Technology">
+    <meta property="og:description" content="Pioneering new frontiers in exploration and innovation.">
+    <meta property="og:image" content="/img/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Improved performance with async/defer -->
+    <script src="https://cdn.tailwindcss.com" ></script>
+    <!-- Removed Iconify library; all icons are now inline SVGs -->
+    
+    <!-- Critical CSS inline -->
+    
+     
+    
+
+    <!-- Add smooth scroll behavior -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .section-animate.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <!-- Add intersection observer script -->
+    <script defer>
+      document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.section-animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </head>
+
+  <body class="bg-white">
+    <!-- Improved accessibility for header -->
+    <header id="header" class="group" role="banner">
+      
+    </header>
+    <nav
+        class="fixed z-20 w-full bg-white/75 backdrop-blur-xl"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div class="px-6 m-auto max-w-6xl 2xl:px-0">
+          <div
+            class="flex flex-wrap items-center justify-between py-2 sm:py-4"
+          >
+            <!-- LOGO -->
+            <div class="flex w-full items-center justify-between lg:w-auto">
+              <a href="#home" aria-label="Ankaa Logo">
+                <img
+                  src="img/ankaa-logo.svg"
+                  alt="Ankaa Logo"
+                  class="h-7"
+                />
+              </a>
+
+              <!-- Mobile menu button -->
+              <div class="flex lg:hidden">
+                <button
+                  id="menu-btn"
+                  aria-label="Toggle menu"
+                  aria-expanded="false"
+                  aria-controls="mobile-menu"
+                  class="btn variant-ghost sz-md icon-only relative z-20 -mr-2.5 block cursor-pointer lg:hidden"
+                >
+                  <!-- Hamburger Icon -->
+                  <svg
+                    class="text-title m-auto size-6 transition-[transform,opacity] duration-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    id="hamburger-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 9h16.5m-16.5 6.75h16.5"
+                    ></path>
+                  </svg>
+                  <!-- Close Icon -->
+                  <svg
+                    class="text-title absolute inset-0 m-auto size-6 hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    id="close-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18 18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div
+              id="mobile-menu"
+              class="hidden w-full flex-wrap items-center justify-end space-y-8 lg:flex lg:h-fit lg:w-fit md:flex-nowrap lg:space-y-0 lg:p-0 lg:relative lg:bg-transparent absolute left-0 top-full p-6"
+            >
+              <div class="mt-6 md:-ml-4 lg:pr-4 lg:mt-0">
+                <ul class="space-y-6 text-base tracking-wide lg:text-sm lg:flex lg:space-y-0">
+                  <li>
+                    <a href="#home" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">HOME</a>
+                  </li>
+                  <li>
+                    <a href="#about" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">ABOUT US</a>
+                  </li>
+                  <li>
+                    <a href="#sister" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">OUR PROJECTS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- MAIN CONTENT -->
+    <!--HOME SECTION-->
+    <main class="bg-white">
+      <section
+        id="home"
+        class="relative scroll-mt-24 min-h-screen"
+        aria-label="Hero section"
+      >
+        <video 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover"
+          aria-hidden="true"
+          loading="lazy"
+        >
+          <source src="img/ANKAA.mp4" type="video/mp4">
+          <img 
+            src="img/back.png" 
+            alt="Background fallback" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+        </video>
+
+        <!-- Overlay to ensure text readability -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="relative flex items-center min-h-screen">
+          <div class="mx-auto max-w-7xl px-6 md:px-12 w-full">
+            <div class="text-center sm:mx-auto sm:w-10/12 lg:w-4/5">
+              <h1
+                class="mt-8 text-4xl font-semibold text-white md:text-5xl xl:text-5xl xl:leading-tight"
+              >
+                Empowering
+                <br class="hidden sm:block" />
+                Tomorrow, Today.
+              </h1>
+              <p
+                class="mx-auto mt-8 max-w-2xl text-lg text-white"
+              >
+                As a pioneering space and tech company, we propel
+                humanity into a new era of exploration and
+                innovation—bridging the gap between present challenges
+                and future possibilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- ABOUT SECTION -->
+      <section 
+        id="about" 
+        class="section-animate py-32 scroll-mt-24 bg-white" 
+        aria-label="About section"
+      >
+        <div class="mx-auto max-w-7xl px-6">
+          <!-- Section Heading -->
+          <div class="text-center max-w-3xl mx-auto">
+
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 lg:text-5xl lg:leading-tight">
+              About Us
+            </h2>
+            <p class="mt-6 text-lg text-gray-600">
+              Discover our comprehensive suite of cutting-edge solutions designed to revolutionize your business operations
+            </p>
+          </div>
+
+          <!-- Improved service cards with semantic markup -->
+          <div class="mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" role="list">
+            <!-- Card 1: Aviation and Space -->
+            <article class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" role="listitem">
+              <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-blue-600/10 transition-all group-hover:scale-150"></div>
+              <div class="relative">
+                <span class="inline-flex items-center justify-center rounded-xl bg-blue-600/10 p-3">
+                  <span class="iconify text-3xl text-[#3a53a3]" data-icon="mdi:airplane"></span>
+                </span>
+                <h3 class="mt-6 text-xl font-semibold text-gray-900">Aviation and Space</h3>
+                <p class="mt-4 text-gray-600">
+                  Comprehensive aviation and space solutions leveraging cutting-edge technology for aerial operations, drone services, and aviation.
+                </p>
+                <ul class="mt-6 space-y-3">
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Aerial Surveying & Mapping
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    PAPI Calibration & Flight Inspection
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    ILS & Radar Systems (EPC)
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Agricultural & Medical Drone Services
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Infrastructure Inspection & Monitoring
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Card 2: Digitalization -->
+            <article class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" role="listitem">
+              <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-blue-600/10 transition-all group-hover:scale-150"></div>
+              <div class="relative">
+                <span class="inline-flex items-center justify-center rounded-xl bg-blue-600/10 p-3">
+                  <span class="iconify text-3xl text-[#3a53a3]" data-icon="mdi:city-variant"></span>
+                </span>
+                <h3 class="mt-6 text-xl font-semibold text-gray-900">Digitalization</h3>
+                <p class="mt-4 text-gray-600">
+                  Digital transformation solutions combining smart city technologies with cutting-edge web and mobile development.
+                </p>
+                <ul class="mt-6 space-y-3">
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Smart City Infrastructure & Planning
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Urban Security & Monitoring Solutions
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Custom Web & Mobile Applications
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Cloud Integration & DevOps
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Environmental Monitoring Systems
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Card 3: AI-Driven Automation -->
+            <article class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" role="listitem">
+              <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-blue-600/10 transition-all group-hover:scale-150"></div>
+              <div class="relative">
+                <span class="inline-flex items-center justify-center rounded-xl bg-blue-600/10 p-3">
+                  <span class="iconify text-3xl text-[#3a53a3]" data-icon="mdi:robot"></span>
+                </span>
+                <h3 class="mt-6 text-xl font-semibold text-gray-900">AI-Driven Automation</h3>
+                <p class="mt-4 text-gray-600">
+                  Advanced robotics and AI solutions for underwater operations, automation, and intelligent systems integration.
+                </p>
+                <ul class="mt-6 space-y-3">
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Subsea Exploration & Maintenance
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    AI-Powered Process Automation
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Marine Archaeological Operations
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Military-Grade Robotics Solutions
+                  </li>
+                  <li class="flex items-center text-gray-700">
+                    <span class="iconify mr-3 text-[#3a53a3]" data-icon="mdi:check-circle"></span>
+                    Tunnel & Pipeline Inspection Systems
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPANY NUMBERS SECTION -->
+      <!-- Our Impact Section -->
+      <section class="py-24 bg-gray-50 scroll-mt-24">
+        <div class="mx-auto max-w-5xl px-6">
+          <!-- Section Heading -->
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 lg:text-5xl">
+              Our Growth Story
+            </h2>
+            <p class="mt-4 text-lg text-gray-700">
+              With our extensive experience, we've achieved:
+            </p>
+          </div>
+      
+          <!-- Impact Stats -->
+          <div class="grid gap-12 md:grid-cols-3 md:divide-x md:divide-gray-300 text-center">
+            <!-- Projects Completed -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-center">
+                <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="120">
+                  0
+                </div>
+                <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
+              </div>
+              <p class="text-lg text-gray-800 font-medium">Projects Completed</p>
+            </div>
+            <!-- Active Users -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-center">
+                <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="50">
+                  0
+                </div>
+                <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
+              </div>
+              <p class="text-lg text-gray-800 font-medium">Employees</p>
+            </div>
+            <!-- Powered Apps -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-center">
+                <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="20">
+                  0
+                </div>
+                <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
+              </div>
+              <p class="text-lg text-gray-800 font-medium">Powered Apps</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- JavaScript for Smooth Counter Animation -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const counters = document.querySelectorAll(".animate-counter");
+          const speed = 200; // Speed of counting
+      
+          const animateCounters = () => {
+            counters.forEach((counter) => {
+              const target = +counter.getAttribute("data-target");
+              const increment = target / speed;
+      
+              let count = 0;
+              const updateCount = () => {
+                if (count < target) {
+                  count += increment;
+                  counter.textContent = Math.floor(count);
+                  requestAnimationFrame(updateCount);
+                } else {
+                  counter.textContent = target.toLocaleString(); // Format numbers with commas
+                }
+              };
+              updateCount();
+            });
+          };
+      
+          // Trigger animation when section is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  animateCounters();
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+      
+          observer.observe(document.querySelector("section"));
+        });
+      </script>
+
+      <!-- APPLICATIONS DEVELOPED SECTION -->
+      <section 
+        id="sister"
+        class="pb-36 scroll-mt-24 bg-gray-50">
+        <div class="mx-auto max-w-6xl px-6">
+          <!-- Section Header -->
+          <div class="text-center">
+            <h2 class="mt-2 text-5xl font-black text-gray-900 tracking-tight">
+              OUR PROJECTS
+            </h2>
+            <p class="mt-4 text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              United by a vision and driven by innovation: see how we
+              empower excellence together.
+            </p>
+          </div>
+
+          <!-- Center the grid items -->
+          <div
+            class="mt-16 grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-3 lg:grid-cols-5"
+          >
+            <!-- Sample Company 1 -->
+            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
+              <div class="block">
+                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
+                  <img
+                    alt="Company 1"
+                    src="./img/health.png"
+                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
+                إحتواء
+              </p>
+            </div>
+            
+            <!-- Sample Company 2 -->
+            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
+              <div class="block">
+                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#315e7b] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
+                  <img
+                    alt="Company 3"
+                    src="./img/بنك الأسماء.jpg"
+                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
+                بنك الأسماء
+              </p>
+            </div>
+            
+            <!-- Sample Company 3 -->
+            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
+              <div class="block">
+                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
+                  <img
+                    alt="Company 4"
+                    src="./img/plus.png"
+                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
+                Ankaa Plus
+              </p>
+            </div>
+
+            <!-- Sample Company 4 -->
+            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
+              <div class="block">
+                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#000000] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
+                  <img
+                    alt="Company 5"
+                    src="./img/icon.png"
+                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
+                M567
+              </p>
+            </div>
+
+            <!-- Sample Company 5 -->
+            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
+              <div class="block">
+                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
+                  <img
+                    alt="Company 6"
+                    src="./img/Tasmiah.png"
+                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
+               TASMIYA
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SISTER COMPANIES SECTION -->
+      <!--<section
+        id="sister"
+        class="section-animate py-32 scroll-mt-24 bg-white"
+        aria-label="Sister companies section"
+      >
+        <div class="mx-auto max-w-6xl px-6 text-center">
+          <!-- Section Header 
+          <h2 class="text-4xl font-semibold text-gray-800">Sister Companies</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Meet our network of innovative sister companies, each contributing to a shared vision of excellence.
+          </p>
+      
+          <!-- Companies List 
+          <div class="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            ... (Commented out sister companies content)
+          </div>
+        </div>
+      </section>-->
+      
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-6">
+      <div class="mx-auto max-w-6xl px-6 text-center">
+        <p
+          class="text-lg font-medium text-gray-900"
+        >
+          &copy; 2025 Ankaa Space & Technology. All rights reserved.
+        </p>
+        <p class="mt-2 text-sm text-gray-600 ">
+          Empowering humanity with cutting-edge space and technology
+          solutions.
+        </p>
+      </div>
+    </footer>
+
+    <!-- MAIN SCRIPT -->
+    <script type="module" src="./main.js"></script>
+
+    <!-- SMOOTH SCROLL & NAV HIGHLIGHT SCRIPT -->
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          // Ignore if the href is just '#'
+          if (this.getAttribute("href") === "#") return;
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // IntersectionObserver to highlight active nav link
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+      function setActiveLink(id) {
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "text-blue-600", // highlight class
+            link.getAttribute("href") === `#${id}`
+          );
+        });
+      }
+
+      const observerOptions = {
+        rootMargin: "-50% 0px -50% 0px", // triggers near middle of viewport
+        threshold: 0,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Mobile menu functionality
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      });
+
+      // Close menu when window is resized to desktop view
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) { // lg breakpoint
+          mobileMenu.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      });
+
+      // Fade-in animation
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0');
+            entry.target.classList.add('opacity-100');
+            fadeObserver.unobserve(entry.target); // Stop observing once animation is triggered
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with data-animate attribute
+      document.querySelectorAll('[data-animate]').forEach((element) => {
+        fadeObserver.observe(element);
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+    const animateElements = document.querySelectorAll("[data-animate]");
+
+    // Set up the observer options
+    const observerOptions = {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add the class to transition to full opacity
+          entry.target.classList.add("opacity-100");
+          // Optionally remove the initial opacity class if you want to tidy up
+          entry.target.classList.remove("opacity-0");
+
+          // Stop observing the element after the animation
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe each element that should be animated
+    animateElements.forEach(el => observer.observe(el));
+  });
+    </script>
+
+    <!-- Stagger animation for service cards -->
+    <script>
+      const cards = document.querySelectorAll('#about .group');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 100 * index);
+      });
+    </script>
+
+    <!-- Add this script before closing body tag -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  </body>
+</html>
