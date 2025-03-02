@@ -67,6 +67,43 @@
         opacity: 1;
         transform: translateY(0);
       }
+      
+      /* Mobile menu animation styles */
+      @media (max-width: 1023px) {
+        #mobile-menu {
+          transform: translateY(-20px);
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+          visibility: hidden;
+          background-color: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border-radius: 0 0 8px 8px;
+        }
+        
+        #mobile-menu.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        /* Mobile menu link styles */
+        #mobile-menu ul li a {
+          display: block;
+          padding: 12px 16px;
+          font-weight: 500;
+          border-left: 3px solid transparent;
+          transition: all 0.2s ease;
+        }
+        
+        #mobile-menu ul li a:hover, 
+        #mobile-menu ul li a:focus {
+          background-color: rgba(59, 130, 246, 0.05);
+          border-left-color: #3b82f6;
+          padding-left: 20px;
+        }
+      }
     </style>
 
     <!-- Add intersection observer script -->
@@ -164,18 +201,18 @@
             <!-- Mobile menu -->
             <div
               id="mobile-menu"
-              class="hidden w-full flex-wrap items-center justify-end space-y-8 lg:flex lg:h-fit lg:w-fit md:flex-nowrap lg:space-y-0 lg:p-0 lg:relative lg:bg-transparent absolute left-0 top-full p-6"
+              class="w-full flex-wrap items-center justify-end space-y-8 lg:flex lg:h-fit lg:w-fit md:flex-nowrap lg:space-y-0 lg:p-0 lg:relative lg:bg-transparent absolute left-0 top-full p-6 z-10"
             >
-              <div class="mt-6 md:-ml-4 lg:pr-4 lg:mt-0">
-                <ul class="space-y-6 text-base tracking-wide lg:text-sm lg:flex lg:space-y-0">
+              <div class="mt-2 w-full lg:pr-4 lg:mt-0">
+                <ul class="space-y-1 text-base tracking-wide lg:text-sm lg:flex lg:space-y-0 border-t lg:border-t-0 pt-4 lg:pt-0">
                   <li>
-                    <a href="#home" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">HOME</a>
+                    <a href="#home" class="block md:px-4 transition-all duration-300 hover:text-blue-600 hover:bg-blue-50 lg:hover:bg-transparent rounded-md">HOME</a>
                   </li>
                   <li>
-                    <a href="#about" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">ABOUT US</a>
+                    <a href="#about" class="block md:px-4 transition-all duration-300 hover:text-blue-600 hover:bg-blue-50 lg:hover:bg-transparent rounded-md">ABOUT US</a>
                   </li>
                   <li>
-                    <a href="#sister" class="block md:px-4 transition-colors duration-300 hover:text-blue-600">OUR PROJECTS</a>
+                    <a href="#sister" class="block md:px-4 transition-all duration-300 hover:text-blue-600 hover:bg-blue-50 lg:hover:bg-transparent rounded-md">OUR PROJECTS</a>
                   </li>
                 </ul>
               </div>
@@ -369,22 +406,23 @@
 
       <!-- COMPANY NUMBERS SECTION -->
       <!-- Our Impact Section -->
-      <section class="py-24 bg-gray-50 scroll-mt-24">
+      <section class="py-24 bg-gray-50 scroll-mt-24 section-animate" id="growth">
         <div class="mx-auto max-w-5xl px-6">
           <!-- Section Heading -->
-          <div class="text-center mb-12">
+          <div class="text-center mb-16">
+            <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium tracking-wide mb-4">OUR JOURNEY</span>
             <h2 class="text-4xl font-extrabold text-gray-900 lg:text-5xl">
               Our Growth Story
             </h2>
-            <p class="mt-4 text-lg text-gray-700">
-              With our extensive experience, we've achieved:
+            <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+              From humble beginnings to industry leadership, our journey reflects our commitment to innovation and excellence.
             </p>
           </div>
-      
+
           <!-- Impact Stats -->
           <div class="grid gap-12 md:grid-cols-3 md:divide-x md:divide-gray-300 text-center">
             <!-- Projects Completed -->
-            <div class="space-y-4">
+            <div class="space-y-4 p-4 hover:transform hover:scale-105 transition-all duration-300">
               <div class="flex items-center justify-center">
                 <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="120">
                   0
@@ -392,9 +430,10 @@
                 <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
               </div>
               <p class="text-lg text-gray-800 font-medium">Projects Completed</p>
+              <p class="text-gray-600">Delivering excellence across diverse sectors</p>
             </div>
-            <!-- Active Users -->
-            <div class="space-y-4">
+            <!-- Employees -->
+            <div class="space-y-4 p-4 hover:transform hover:scale-105 transition-all duration-300">
               <div class="flex items-center justify-center">
                 <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="50">
                   0
@@ -402,9 +441,10 @@
                 <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
               </div>
               <p class="text-lg text-gray-800 font-medium">Employees</p>
+              <p class="text-gray-600">Talented professionals driving innovation</p>
             </div>
             <!-- Powered Apps -->
-            <div class="space-y-4">
+            <div class="space-y-4 p-4 hover:transform hover:scale-105 transition-all duration-300">
               <div class="flex items-center justify-center">
                 <div class="text-6xl font-extrabold text-[#3f4b9a] animate-counter drop-shadow-md" data-target="20">
                   0
@@ -412,8 +452,11 @@
                 <span class="text-6xl font-extrabold text-[#3f4b9a]">+</span>
               </div>
               <p class="text-lg text-gray-800 font-medium">Powered Apps</p>
+              <p class="text-gray-600">Transforming ideas into digital solutions</p>
             </div>
           </div>
+          
+       
         </div>
       </section>
       
@@ -460,109 +503,138 @@
 
       <!-- APPLICATIONS DEVELOPED SECTION -->
       <section 
-        id="sister"
-        class="pb-36 scroll-mt-24 bg-gray-50">
+        id="projects"
+        class="py-24 md:py-32 scroll-mt-24 bg-gradient-to-b from-white to-gray-50 section-animate">
         <div class="mx-auto max-w-6xl px-6">
           <!-- Section Header -->
-          <div class="text-center">
-            <h2 class="mt-2 text-5xl font-black text-gray-900 tracking-tight">
-              OUR PROJECTS
+          <div class="text-center mb-16">
+            <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium tracking-wide mb-4">INNOVATION HUB</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+              Our Projects
             </h2>
-            <p class="mt-4 text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              United by a vision and driven by innovation: see how we
-              empower excellence together.
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Discover our groundbreaking initiatives that are shaping the future of space and technology.
             </p>
           </div>
 
-          <!-- Center the grid items -->
-          <div
-            class="mt-16 grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-3 lg:grid-cols-5"
-          >
-            <!-- Sample Company 1 -->
-            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
-              <div class="block">
-                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
-                  <img
-                    alt="Company 1"
-                    src="./img/health.png"
-                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
-                    loading="lazy"
-                  />
+          <!-- Projects Grid - Updated with card design -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            <!-- Project 1 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-[#3A53A3] flex items-center justify-center p-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
+                <img
+                  alt="إحتواء"
+                  src="./img/health.png"
+                  class="h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">إحتواء</h3>
+                <p class="mt-2 text-gray-600">Healthcare innovation platform revolutionizing patient care and medical services.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Healthcare</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">AI</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Mobile</span>
                 </div>
               </div>
-              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
-                إحتواء
-              </p>
             </div>
             
-            <!-- Sample Company 2 -->
-            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
-              <div class="block">
-                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#315e7b] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
-                  <img
-                    alt="Company 3"
-                    src="./img/بنك الأسماء.jpg"
-                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
-                    loading="lazy"
-                  />
+            <!-- Project 2 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-[#315e7b] flex items-center justify-center p-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
+                <img
+                  alt="بنك الأسماء"
+                  src="./img/بنك الأسماء.jpg"
+                  class="h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">بنك الأسماء</h3>
+                <p class="mt-2 text-gray-600">Comprehensive naming database with cultural and historical significance.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Database</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Cultural</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Web</span>
                 </div>
               </div>
-              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
-                بنك الأسماء
-              </p>
             </div>
             
-            <!-- Sample Company 3 -->
-            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
-              <div class="block">
-                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
-                  <img
-                    alt="Company 4"
-                    src="./img/plus.png"
-                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
-                    loading="lazy"
-                  />
+            <!-- Project 3 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-[#3A53A3] flex items-center justify-center p-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
+                <img
+                  alt="Ankaa Plus"
+                  src="./img/plus.png"
+                  class="h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Ankaa Plus</h3>
+                <p class="mt-2 text-gray-600">Enhanced service platform delivering premium solutions for enterprise clients.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Enterprise</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">SaaS</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Cloud</span>
                 </div>
               </div>
-              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
-                Ankaa Plus
-              </p>
             </div>
 
-            <!-- Sample Company 4 -->
-            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
-              <div class="block">
-                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#000000] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
-                  <img
-                    alt="Company 5"
-                    src="./img/icon.png"
-                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
-                    loading="lazy"
-                  />
+            <!-- Project 4 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-[#000000] flex items-center justify-center p-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-700/30 to-transparent"></div>
+                <img
+                  alt="M567"
+                  src="./img/icon.png"
+                  class="h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">M567</h3>
+                <p class="mt-2 text-gray-600">Advanced security and monitoring system with AI-powered analytics.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Security</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">AI</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Analytics</span>
                 </div>
               </div>
-              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
-                M567
-              </p>
             </div>
 
-            <!-- Sample Company 5 -->
-            <div class="group text-center transition-all duration-300 hover:-translate-y-2">
-              <div class="block">
-                <div class="flex h-28 w-28 items-center justify-center rounded-2xl bg-[#3A53A3] shadow-lg transition-transform group-hover:shadow-xl group-hover:scale-105">
-                  <img
-                    alt="Company 6"
-                    src="./img/Tasmiah.png"
-                    class="h-16 w-16 object-contain transition-transform group-hover:scale-110"
-                    loading="lazy"
-                  />
+            <!-- Project 5 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-[#3A53A3] flex items-center justify-center p-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
+                <img
+                  alt="TASMIYA"
+                  src="./img/Tasmiah.png"
+                  class="h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">TASMIYA</h3>
+                <p class="mt-2 text-gray-600">Cultural naming application preserving heritage through modern technology.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Cultural</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Mobile</span>
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">Heritage</span>
                 </div>
               </div>
-              <p class="mt-4 text-base font-bold text-gray-800 group-hover:text-blue-600">
-               TASMIYA
-              </p>
             </div>
+            
+            <!-- Project 6 (New) -->
+         
           </div>
+          
+          <!-- View All Projects Button -->
+         
         </div>
       </section>
 
@@ -658,8 +730,15 @@
       const hamburgerIcon = document.getElementById('hamburger-icon');
       const closeIcon = document.getElementById('close-icon');
       
+      // Initialize menu state based on screen size
+      if (window.innerWidth >= 1024) {
+        mobileMenu.style.visibility = 'visible';
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.transform = 'translateY(0)';
+      }
+      
       menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('active');
         hamburgerIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');
       });
@@ -667,18 +746,35 @@
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
           hamburgerIcon.classList.remove('hidden');
           closeIcon.classList.add('hidden');
         }
       });
 
+      // Close menu when a link is clicked
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 1024) {
+            mobileMenu.classList.remove('active');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          }
+        });
+      });
+
       // Close menu when window is resized to desktop view
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 1024) { // lg breakpoint
-          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.remove('active');
+          mobileMenu.style.visibility = 'visible';
+          mobileMenu.style.opacity = '1';
+          mobileMenu.style.transform = 'translateY(0)';
         } else {
-          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
+          mobileMenu.style.removeProperty('visibility');
+          mobileMenu.style.removeProperty('opacity');
+          mobileMenu.style.removeProperty('transform');
           hamburgerIcon.classList.remove('hidden');
           closeIcon.classList.add('hidden');
         }
